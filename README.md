@@ -47,8 +47,6 @@ Before you begin, make sure you have the following installed on your system:
    yarn install
    ```
 
-## Step 4: Rename dotenvfile to .env
-
 ## Step 5: Run the Vite App
 1. Once the dependencies are installed, start the development server:
    ```bash
