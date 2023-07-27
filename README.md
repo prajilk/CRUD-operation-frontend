@@ -30,7 +30,7 @@ Before you begin, make sure you have the following installed on your system:
 5. Run the following command, replacing `<repository-url>` with the copied URL:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/prajilk/CRUD-operation-frontend
 
 ## Step 3: Install Dependencies
 
