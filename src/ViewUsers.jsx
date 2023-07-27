@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom'
 
 const ViewUsers = () => {
 
-    console.log(import.meta.env.VITE_SERVER_URL);
     // State variables to store all users in the db
     const [users, setUsers] = useState([]);
 
