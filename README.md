@@ -57,3 +57,6 @@ Before you begin, make sure you have the following installed on your system:
    yarn dev
    ```
 2. The development server will compile the app and open it in your default browser. If it doesn't open automatically, you can access it at http://localhost:5173/ or another port specified in the terminal.
+
+## Step 6: Clone server
+1. Clone backend server code from this [Repo](https://github.com/prajilk/CRUD-operation-backend)
