@@ -38,12 +38,10 @@ Before you begin, make sure you have the following installed on your system:
 
    ```bash
    cd <repository-name>
-
+#
    ```bash
    npm install
-
-   # or
-
+#
    ```bash
    yarn install
 
