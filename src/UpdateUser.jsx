@@ -36,7 +36,7 @@ const UpdateUser = () => {
             }
 
             // Axios POST request to create a new user by sending 'newUser' data to the server.
-            axios.post(`http://localhost:3000/update-user/${id}`, newUser).then((res) => {
+            axios.post(`${import.meta.env.VITE_SERVER_URL}/update-user/${id}`, newUser).then((res) => {
                 // The '.then()' block handles the response from the server after the POST request.
 
                 // Check if the user was successfully saved on the server-side.
@@ -59,7 +59,7 @@ const UpdateUser = () => {
     useEffect(() => {
 
         // Axios GET request to get user data by sending 'id' as param to the server.
-        axios.get(`http://localhost:3000/fetch-user/${id}`)
+        axios.get(`${import.meta.env.VITE_SERVER_URL}/fetch-user/${id}`)
             .then((res) => {
                 if (res.data.success) {
                     // Set the fetched data to the input fields

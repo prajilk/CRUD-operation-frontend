@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 const ViewUsers = () => {
 
+    console.log(import.meta.env.VITE_SERVER_URL);
     // State variables to store all users in the db
     const [users, setUsers] = useState([]);
 
@@ -13,7 +14,7 @@ const ViewUsers = () => {
     // Function to fetch all users from the Database
     const fetchUser = () => {
         // Axios GET request to fetch all users from the DB
-        axios.get('http://localhost:3000/users')
+        axios.get(`${import.meta.env.VITE_SERVER_URL}/users`)
             .then((res) => {
                 if (res.data.success) {
                     setUsers(res.data.users);
@@ -37,7 +38,7 @@ const ViewUsers = () => {
         const response = confirm("Are you sure you want to delete this user?");
         if (response) {
             // Axios DELETE request to delete the given user from the DB by ID
-            axios.delete(`http://localhost:3000/delete-user/${userId}`).then((res) => {
+            axios.delete(`${import.meta.env.VITE_SERVER_URL}/delete-user/${userId}`).then((res) => {
                 if (res.data.success) {
                     // Call fetch method to fetch user data after DELETION
                     fetchUser();

@@ -33,7 +33,7 @@ const CreateUser = () => {
             }
 
             // Axios POST request to create a new user by sending 'newUser' data to the server.
-            axios.post('http://localhost:3000/create-user', newUser).then((res) => {
+            axios.post(`${import.meta.env.VITE_SERVER_URL}/create-user`, newUser).then((res) => {
                 // The '.then()' block handles the response from the server after the POST request.
 
                 // Check if the user was successfully saved on the server-side.
