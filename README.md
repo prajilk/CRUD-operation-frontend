@@ -48,7 +48,7 @@ Before you begin, make sure you have the following installed on your system:
    ```
 
 ## Step 4: Run the Vite App
-1.Once the dependencies are installed, start the development server:
+1. Once the dependencies are installed, start the development server:
    ```bash
    npm run dev
    ```
@@ -56,4 +56,4 @@ Before you begin, make sure you have the following installed on your system:
    ```bash
    yarn dev
    ```
-2.The development server will compile the app and open it in your default browser. If it doesn't open automatically, you can access it at http://localhost:5173/ or another port specified in the terminal.
+2. The development server will compile the app and open it in your default browser. If it doesn't open automatically, you can access it at http://localhost:5173/ or another port specified in the terminal.
