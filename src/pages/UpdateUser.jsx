@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios"
 import { useNavigate, useParams } from 'react-router-dom';
+import Form from '../components/Form';
 
 const UpdateUser = () => {
 
@@ -16,6 +17,21 @@ const UpdateUser = () => {
     // State variables to handle the response message and error status after form submission.
     const [response, setResponse] = useState(''); // State for the response message.
     const [errRes, setErrRes] = useState(false);  // State to indicate if an error occurred during form submission.
+
+    // Combine all states to send to the child component Form
+    const states = {
+        fname,
+        lname,
+        dob,
+        address
+    }
+    // Combine all setStates to send to the child component Form
+    const setStates = {
+        setFname,
+        setLname,
+        setDob,
+        setAddress
+    }
 
     // The 'navigate' function from the 'react-router-dom' library used for programmatic navigation.
     const navigate = useNavigate();
@@ -137,6 +153,9 @@ const UpdateUser = () => {
                 {/* Submit form */}
                 <input className='bg-blue-400 cursor-pointer text-white font-bold p-2 rounded-lg mt-3' type="submit" value="Update User" />
             </form>
+
+            <Form submitFunction={updateUser} states={states} setStates={setStates} buttonValue="Update User" />
+
         </div>
     )
 }

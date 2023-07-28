@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from "axios"
 import { useNavigate } from 'react-router-dom';
+import Form from '../components/Form';
 
 const CreateUser = () => {
 
@@ -17,6 +18,20 @@ const CreateUser = () => {
     // The 'navigate' function from the 'react-router-dom' library used for programmatic navigation.
     const navigate = useNavigate();
 
+    // Combine all states to send to the child component Form
+    const states = {
+        fname,
+        lname,
+        dob,
+        address
+    }
+    // Combine all setStates to send to the child component Form
+    const setStates = {
+        setFname,
+        setLname,
+        setDob,
+        setAddress
+    }
 
     // Function to create a new user
     const createNewUser = (e) => {
@@ -61,58 +76,7 @@ const CreateUser = () => {
             <span className={errRes ? 'text-red-500' : 'text-green-400'}>{response}</span>
 
             {/* Create new User Form */}
-            <form onSubmit={createNewUser} method='post' className='flex flex-col'>
-
-                {/* Input first name  */}
-                <label htmlFor="fname" className='text-sm mt-3'>First name</label>
-                <input
-                    className='border-0 outline-0 bg-slate-200 rounded-lg px-3 py-2 mt-1'
-                    type="text"
-                    id='fname'
-                    name='firstname'
-                    placeholder='firstname'
-                    value={fname}
-                    onChange={(e) => setFname(e.target.value)}
-                    required />
-
-                {/* Input last name  */}
-                <label htmlFor="lname" className='text-sm mt-3'>Last name</label>
-                <input
-                    className='border-0 outline-0 bg-slate-200 rounded-lg px-3 py-2 mt-1'
-                    type="text"
-                    id='lname'
-                    name="lastname"
-                    placeholder='lastname'
-                    value={lname}
-                    onChange={(e) => setLname(e.target.value)}
-                    required />
-
-                {/* Input date of birth  */}
-                <label htmlFor="dob" className='text-sm mt-3'>Date of birth</label>
-                <input
-                    className='border-0 outline-0 bg-slate-200 rounded-lg px-3 py-2 mt-1'
-                    type="date"
-                    name="dob"
-                    id="dob"
-                    value={dob}
-                    onChange={(e) => setDob(e.target.value)}
-                    required />
-
-                {/* Input Address */}
-                <label htmlFor="address" className='text-sm mt-3'>Address</label>
-                <input
-                    className='border-0 outline-0 bg-slate-200 rounded-lg px-3 py-2 mt-1'
-                    type="text"
-                    name="address"
-                    id="address"
-                    placeholder='Address'
-                    value={address}
-                    onChange={(e) => setAddress(e.target.value)}
-                    required />
-
-                {/* Submit form */}
-                <input className='bg-blue-400 cursor-pointer text-white font-bold p-2 rounded-lg mt-3' type="submit" value="Create User" />
-            </form>
+            <Form submitFunction={createNewUser} states={states} setStates={setStates} buttonValue="Create User" />
         </div>
     )
 }
