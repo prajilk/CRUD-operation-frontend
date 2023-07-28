@@ -101,7 +101,7 @@ const UpdateUser = () => {
 
             <span className={errStatus ? 'text-red-500' : 'text-green-400'}>{status}</span>
 
-
+            {/* Updated User Form */}
             <Form submitFunction={updateUser} states={states} setStates={setStates} buttonValue="Update User" />
 
         </div>
