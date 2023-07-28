@@ -2,9 +2,9 @@
 import { Routes, Route } from "react-router-dom";
 
 // Import components for different routes.
-import CreateUser from "./CreateUser"; // Component for creating a new user.
-import ViewUsers from "./ViewUsers";   // Component for viewing all users.
-import UpdateUser from "./UpdateUser"; // Component for updating an existing user.
+import CreateUser from "./pages/CreateUser"; // Component for creating a new user.
+import ViewUsers from "./pages/ViewUsers";   // Component for viewing all users.
+import UpdateUser from "./pages/UpdateUser"; // Component for updating an existing user.
 
 // App component responsible for handling routing and rendering different components based on the current URL.
 function App() {
