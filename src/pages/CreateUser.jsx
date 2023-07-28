@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import Form from '../components/Form';
 import useUserData from '../hooks/useUserData';
 import useStatus from '../hooks/useStatus';
+import FormHeading from '../components/FormHeading';
+import StatusText from '../components/StatusText';
 
 const CreateUser = () => {
 
@@ -68,8 +70,11 @@ const CreateUser = () => {
     return (
         <div className='rounded-xl mx-auto mt-10 p-7 w-full md:w-[40%] bg-white'>
 
-            <h1 className='text-3xl font-bold text-center mb-4'>Create new User</h1>
-            <p className='underline text-blue-500 cursor-pointer' onClick={() => navigate("/")}>Go to home</p>
+            {/* Form heading */}
+            <FormHeading value='Create new User' />
+
+            {/* Show the user is created successfully or not */}
+            <StatusText navigate={navigate} />
 
             <span className={errStatus ? 'text-red-500' : 'text-green-400'}>{status}</span>
 

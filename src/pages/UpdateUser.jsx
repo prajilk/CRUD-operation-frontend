@@ -93,8 +93,11 @@ const UpdateUser = () => {
     return (
         <div className='rounded-xl mx-auto mt-10 p-7 w-full md:w-[40%] bg-white'>
 
-            <h1 className='text-3xl font-bold text-center mb-4'>Update User</h1>
-            <p className='underline text-blue-500 cursor-pointer' onClick={() => navigate("/")}>Go to home</p>
+            {/* Form heading */}
+            <FormHeading value='Update User' />
+
+            {/* Show the user is updated successfully or not */}
+            <StatusText navigate={navigate} />
 
             <span className={errStatus ? 'text-red-500' : 'text-green-400'}>{status}</span>
 
